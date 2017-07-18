@@ -15,5 +15,10 @@
     </style>
 
 
+    <style name="BlackTheme" parent="android:Theme.Material.NoActionBar">
+
+    </style>
+
+
 
 </resources>

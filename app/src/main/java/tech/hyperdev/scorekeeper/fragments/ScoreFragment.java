@@ -43,6 +43,7 @@ public class ScoreFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+
         View view = inflater.inflate(R.layout.fragment_score, container, false);
         tvTeamName = (TextView) view.findViewById(R.id.tvTeamName);
         tvScore = (TextView) view.findViewById(R.id.tvScore);
@@ -53,6 +54,8 @@ public class ScoreFragment extends Fragment implements View.OnClickListener {
 
         teamName = bundle.getString("TEAM_NAME");
         tvTeamName.setText(teamName);
+
+
 
         btnPlus.setOnClickListener(this);
         btnSubtract.setOnClickListener(this);
