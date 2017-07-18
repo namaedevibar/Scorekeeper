@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import tech.hyperdev.scorekeeper.R;
 
@@ -17,11 +18,35 @@ public class ScoreFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static ScoreFragment newInstance(String name) {
+
+        Bundle args = new Bundle();
+        args.putString("TEAM_NAME",name);
+
+        ScoreFragment fragment = new ScoreFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    private TextView tvTeamName;
+    String teamName;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_score, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_score, container, false);
+        tvTeamName = (TextView) view.findViewById(R.id.tvTeamName);
+
+        Bundle bundle = getArguments();
+
+        teamName = bundle.getString("TEAM_NAME");
+        tvTeamName.setText(teamName);
+
+
+        return view;
     }
 
 }
